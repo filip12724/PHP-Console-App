@@ -1,0 +1,9 @@
+{
+  "name": "filip/console",
+  "autoload": {
+    "psr-4": {
+      "Filip\\Console\\": "src/"
+    }
+  },
+  "require": {}
+}
