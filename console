@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+
+include 'vendor/autoload.php';
+
+use Filip\Console\Application;
+use Filip\Console\Kernel;
+
+$application = new Application;
+$kernel = new Kernel($application);
+
+
+$status = $kernel->handle();
+
+exit($status);
+echo "hello world";
+
