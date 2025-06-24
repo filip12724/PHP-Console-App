@@ -5,5 +5,7 @@
       "Filip\\Console\\": "src/"
     }
   },
-  "require": {}
+  "require": {
+    "symfony/var-dumper": "7.1"
+  }
 }
