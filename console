@@ -6,7 +6,10 @@ include 'vendor/autoload.php';
 use Filip\Console\Application;
 use Filip\Console\Kernel;
 
-$application = new Application;
+$namespace = 'Filip\\Console\\Commands\\';
+
+$application = new Application($namespace);
+
 $kernel = new Kernel($application);
 
 
