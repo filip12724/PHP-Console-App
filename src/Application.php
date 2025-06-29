@@ -7,12 +7,14 @@ use DirectoryIterator;
 class Application 
 {
     private array $commands = [];
+    private array $args = [];
+    
+    public function __construct(private string $namespace, private array $argv){}
 
-    public function __construct(private string $namespace){}
-    public function run(): int 
+    public function run(): int  
     {
         $this->registerCommands();
-
+        $this->parseOptions();
         echo "Hello from inside the application";
         
         return 0;
@@ -31,7 +33,14 @@ class Application
 
             $this->commands[$commandName] = $command;
         }
+    }
 
-        dd($this->commands);
+    private function parseOptions(): void 
+    {
+        if(!isset($this->argv[1])){
+            throw new CommandException('Command not provided');
+        }
+
+        $this->args = array_slice($this->argv,2);
     }
 }

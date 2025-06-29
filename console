@@ -7,8 +7,9 @@ use Filip\Console\Application;
 use Filip\Console\Kernel;
 
 $namespace = 'Filip\\Console\\Commands\\';
+$argv = $_SERVER['argv'] ?? [];
 
-$application = new Application($namespace);
+$application = new Application($namespace, $argv);
 
 $kernel = new Kernel($application);
 
